@@ -1,0 +1,13 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }} - GetTweets& GithubRepo</title>
+    {% else %}
+    <title>Githubrepo And Tweets </title>
+    {% endif %}
+<script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+<h2 size="56" allign='justify' ><a href="/index">GITHUB</a></h2>
+<s1  style="float:right;text-size:25px;"><a href="/logout"> Logout</a>
+        Guest<a align='left' href="/login"> Login</a><br><a href="/register">&nbsp;&nbsp;&nbsp;Register&nbsp;&nbsp;</a>
+{% block content %}{% endblock %}
+</html>

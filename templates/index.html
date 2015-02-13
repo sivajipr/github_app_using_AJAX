@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+	<h1><center>GITHUB</center></h1><br>
+     <div align="center"> <form action="" method="post" name="post">
+    <input type="text" size="20" name="value" id="id"><br>
+    <p><input type="button" onclick="exefun()" value="submit"></p></input>
+      </form></div>
+
+  <script>
+	function exefun(){
+        $.post('/github', {
+        'text': document.getElementById("id").value
+        }).done(function success(datas){
+                console.log(datas);
+                document.getElementById("para1").innerHTML=datas[1];
+        }).fail(function error(){
+                alert("error");
+           });
+        }
+
+  </script>
+<p id="para1"></p>
+</html>
+{% endblock %}
